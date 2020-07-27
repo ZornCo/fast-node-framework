@@ -1,0 +1,34 @@
+{
+  "name": "fnf",
+  "version": "2.0.0-alpha.1",
+  "description": "Fast Node Framework - a very opinionated framework for quickly deploying JSONAPI-compliant web applications with MongoDB as the datastore",
+  "main": "dist/app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tap test/**/*.test.ts",
+    "start": "npm run build:ts && fastify start -l info dist/app.js",
+    "build": "rm -rf dist && npm run build:ts",
+    "build:ts": "tsc",
+    "dev": "tsc && tsc -w"
+  },
+  "keywords": [
+    "fastify"
+  ],
+  "author": "ZornCo",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@types/mongodb": "^3.5.25",
+    "fastify": "^3.1.1",
+    "mongodb": "^3.5.9",
+    "uuid": "^8.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.18",
+    "@types/uuid": "^8.0.0",
+    "concurrently": "^5.1.0",
+    "tap": "^14.0.0",
+    "typescript": "^3.9.6"
+  }
+}
